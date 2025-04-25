@@ -6,15 +6,15 @@
     <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+     <script src="https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
     <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
     <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-    <style>
+	  <style>
         h5 {
             text-align: center;
             margin-top: -5px;
             font-size: 9px;
-            color: #636363;
+            color: #636363; /* Improves visibility */
         }
 
         .attributiontwo {
@@ -33,25 +33,16 @@
 
         .attributiontwo a {
             margin: 15px;
-            text-decoration: none;
-            -webkit-tap-highlight-color: transparent;
+            text-decoration: none; /* Removes underline */
+           -webkit-tap-highlight-color: transparent; /* Removes blue highlight */
         }
 
         .icon {
             width: 43px;
             height: 43px;            
-            transition: transform 0.2s ease;
         }
         .icon:hover {
             transform: scale(1.1);         
-        }
-
-        /* Improved model-viewer styling */
-        model-viewer {
-            --poster-color: transparent;
-            --progress-bar-color: #888;
-            --progress-mask: #fff;
-            background-color: #f5f5f5;
         }
 
         /* Responsive Design */
@@ -68,83 +59,71 @@
   </head>
   <body>
     <div id="card">
-      <!-- Enhanced model-viewer with better lighting -->
-      <model-viewer 
-          src="USP of the Applicator.glb" 
-          ios-src="USP of the Applicator.usdz" 
-          ar 
-          ar-modes="webxr scene-viewer quick-look" 
-          camera-controls 
-          poster="loading.gif"  
-          shadow-intensity="1"
-          shadow-softness="0.8" 
-          exposure="1.2"
-          auto-rotate
-          rotation-per-second="30deg"
-          camera-orbit="0deg 75deg 105%"
-          camera-target="0m 0m 0m"
-          field-of-view="30deg"
-          min-camera-orbit="auto auto 100%"
-          max-camera-orbit="auto auto 400%"
-          interaction-prompt="none"
-          ar-scale="fixed"
-      >
-          <div class="progress-bar hide" slot="progress-bar">
-              <div class="update-bar"></div>
-          </div>
-          
-          <button slot="ar-button" id="ar-button">
-              View in 4D
-          </button>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="USP of the Applicator.glb" ios-src="USP of the Applicator.usdz" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="loading.gif"  shadow-intensity="0.88" shadow-softness="1" exposure="1">
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+        View in 4D
+    </button>
 
-          <div id="button" style="display:flex; justify-content: space-between;">
-              <img src="iitname.png" style="width:75px; padding-left: 15px;padding-top: 0px;"/>    
-          </div>
+       <div id="button" style = "display:flex; justify-content: space-between;">
+	  <img src="iitname.png"  style="width:75px;  padding-left: 15px;padding-top: 0px;"/>    
+      </div>
      
-          <div id="ar-prompt">
-              <img src="ar_hand_prompt.png">
-          </div>
-      </model-viewer>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+    </model-viewer>
+	 <section class="attributiontwo">
+       <p style="background-image: url('black.png')" width: 60px; height: 60px; padding-left: 0px; padding-top: 10px;">
       
-      <section class="attributiontwo">
-          <p style="background-image: url('black.png')" width: 60px; height: 60px; padding-left: 0px; padding-top: 10px;">
-              <span>
-                  <a href="https://medworldexpo.com/product-details/a760f2a4-8c68-4c75-919f-cf984005b25a">
-                      <img src="Brochure_1.png" class="icon">
-                  </a>
-                  <a href="https://www.youtube.com/watch?v=BuUgKnIpHZc&t=2s">
-                      <img src="Video_1.png" class="icon">
-                  </a>
-                  <a href="https://medworldexpo.com/">
-                      <img src="web_1.png" class="icon">
-                  </a>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSew4D56CSKpONvc30Ay7cLUY6FnPCOs7zK9IPYRLQWQPswbsg/viewform?usp=sf_link">
-                      <img src="form_1.png" class="icon">
-                  </a>
-              </span>
-          </p>
-      </section>    
+      <span>
+        
+        <a href="https://medworldexpo.com/product-details/a760f2a4-8c68-4c75-919f-cf984005b25a">
+	      <img src="Brochure_1.png" class="icon" >
+	</a>
+        <a href="https://www.youtube.com/watch?v=BuUgKnIpHZc&t=2s">
+	     <img src="Video_1.png" class="icon"></a>
+        <a href="https://medworldexpo.com/">
+		<img src="web_1.png" class="icon" >
+	</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSew4D56CSKpONvc30Ay7cLUY6FnPCOs7zK9IPYRLQWQPswbsg/viewform?usp=sf_link">
+		<img src="form_1.png" class="icon" ></a>
+      </span>
+         <style>
+       h5 {
+       text-align: center;
+       margin-top:-5px; 
+       
+       
+       font-size: 9px;
+         }
+          
+   </style>  
+   
+    </section>    
+     <section class="attributiontwo">
+       <p style="background-image: url('black.png')" style="width:60px;height:60px; padding-left: 0px;padding-top: 10px;">
+         <style>
+       h5 {
+       text-align: center;
+       margin-top:-5px; 
+       
+       
+       font-size: 9px;
+         }
+          
+   </style>  
+   
+    </section>
       
-      <section class="attributiontwo">
-          <p style="background-image: url('black.png')" style="width:60px;height:60px; padding-left: 0px;padding-top: 10px;"></p>
-      </section>
   </div>
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3923ST558"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-X3923ST558');
-  </script>
-  
-  <script src="script.js"></script>
-  <!-- Loads <model-viewer> for browsers: -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
-  
-  <!-- Optional: Add lighting controls -->
-  <script>
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    <script>
     document.addEventListener('DOMContentLoaded', () => {
       const modelViewer = document.querySelector('model-viewer');
       
@@ -166,4 +145,4 @@
     });
   </script>
   </body>
-</html>
+</html>This code AR view add Best lighiting
